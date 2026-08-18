@@ -17,7 +17,7 @@ jobs:
           name: projetozipado.zip
           path: |
             '**.py'
-            README.MD
+            README.md
 
   deploy:
     runs-on: ubunto-latest
@@ -28,4 +28,3 @@ jobs:
             name: projetozipado.zip
       - name: Display structure of downloaded files
         run: ls -R
-        
