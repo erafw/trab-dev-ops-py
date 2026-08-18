@@ -18,4 +18,14 @@ jobs:
           path: |
             '**.py'
             README.MD
-            
+
+  deploy:
+    runs-on: ubunto-latest
+    needs: deliver
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+            name: projetozipado.zip
+      - name: Display structure of downloaded files
+        run: ls -R
+        
