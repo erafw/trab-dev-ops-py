@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: Continuous Integration
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test-and-build:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,8 +27,7 @@ jobs:
       run: |
         pytest
 
-    # ALERTAS (SEMANA 6) 
     - name: Send status alert notification
       if: always()
       run: |
-        echo "::warning title=Build Status Alert::Pipeline execution finished with status: ${{ job.status }}"
+        echo "::warning title=Build Status Alert::Pipeline execution finished"
